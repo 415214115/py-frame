@@ -1,4 +1,4 @@
-from flask import Flask, session
+from flask import Flask, request
 # from dbSQL.db import app
 from appRoute.apiRouter import api
 
@@ -22,14 +22,18 @@ def creat_app():
 
     app.config['SECRET_KEY'] = os.urandom(24)
 
-    app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=1) # 设置session到期时间
-
+    app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10) # 设置session到期时间
     # session.permanent = True
 
     # # 配置数据库
     # app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+mysqlconnector://root:scw729295@127.0.0.1/test"
     # # 如果设置成 True (默认情况)，Flask-SQLAlchemy 将会追踪对象的修改并且发送信号。
     # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+
+  
+        
+
 
 
     api.init_app(app)

@@ -6,8 +6,8 @@ api = Api()
 
 apiList = appRoute.router
 
-api.add_resource(apiList.test,'/test/<name>')
-api.add_resource(apiList.test1,'/test1/<name>')
+api.add_resource(apiList.test,'/test')
+api.add_resource(apiList.test1,'/test1')
 
 
 # api.add_resource(apiList.image,'/image')
