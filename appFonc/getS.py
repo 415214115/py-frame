@@ -10,12 +10,13 @@ class test1(Resource):
         name = request.values.get("name")
         # print(verify_token(token))
         # verify_token(token)
-        r = redis.StrictRedis(host='localhost', port=6379, db=0)
-        if r.get(name):
-            r.setex(name, 30, token)
+        # r = redis.StrictRedis(host='localhost', port=6379, db=0)
+        # if r.get(name):
+        #     r.setex(name, 30, token)
             # time.sleep(30)
-        return str(r.get(name).decode('ascii'))
+        # return str(r.get(name).decode('ascii'))
         # return  verify_token(token)
+        return '000'
 
 
 

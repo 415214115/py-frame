@@ -16,7 +16,7 @@ class test(Resource):
         # get_token(name)
         name = request.values.get("name")
         r = redis.StrictRedis(host='localhost', port=6379, db=0)
-        r.set(name, get_token(name), ex=30)
+        r.set(name, get_token(name), ex=300)
         print(r.get(name).decode('ascii'))
         return jsonify(
             token = str(r.get(name).decode('ascii'))
