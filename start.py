@@ -2,6 +2,8 @@ from appRoute import creat_app
 from appConfig.config import cfg
 import redis
 from flask import request
+from appFonc.aaaaa import verify_token
+
 app = creat_app()
 
 
@@ -19,9 +21,9 @@ def before_request():
                 return 'token不正确'
             else:
                 r.setex(name, 30, token)
-                return 'token正确'
+                return verify_token(token)
         else:
-            return '%s未登录 ' %name
+            return verify_token(token)
 
 
 

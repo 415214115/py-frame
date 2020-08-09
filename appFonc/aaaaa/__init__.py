@@ -4,7 +4,7 @@ from itsdangerous import SignatureExpired
 from flask import jsonify
 
 secret_key = 'afesjyrtrw6457t'
-expires_in = 300   # 有效期单位为秒
+expires_in = 7*24*60*60   # 有效期单位为秒
 
 def get_token(id):
     # serializer = TJWSSerializer(秘钥, 有效期单位为秒)
